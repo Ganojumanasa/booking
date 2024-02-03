@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bus Booking</title>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://cdn.wallpapersafari.com/33/32/rp9SOs.jpg);
+    background-size: cover;
+    background-position: center;
+}
+  
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+label {
+    font-weight: bold;
+  }
+  
+input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+button:hover {
+    background-color: #45a049;
+  }
+  
+.cancelButton {
+    margin-top: 20px;
+    background-color: #d9534f;
+  }
+  </style>
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+  <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js">
+  </script>
+</head>
+<body>
+  <py-script class="index.py">
+    
+  </py-script>
+
+  <div class="container">
+    <h1>Bus Booking</h1>
+    
+    <form id="bookingForm" action="index.php"  method="post">
+      <label for="busNumber">Form:</label>
+      <input type="text" id="busName" name="FORM" required>
+      <label for="busNumber" >To:</label>
+      <input type="text" id="reached" nam="To" required>
+
+      <label for="seatNumber" >Seat:</label>
+      <input type="number" id="seatNumber" min="1" name="Seat" required>
+
+      <label for="date" >Date:</label>
+      <input type="date" id="date" name="Date" required>
+
+      <label for="time">Time:</label>
+      <input type="time" id="time"  name="time" required>
+
+      <button type="submit">Book Now</button>
+    </form>
+
+    <button id="cancelButton" onclick="cancelBooking()">Cancel Booking</button>
+  </div>
+
+  <script>
+    const express = require('express');
+    const mysql = require('mysql');
+    const bodyParser = require('body-parser');
+
+    const app = express();
+    const port = 3306;
+
+    // Create a MySQL connection
+    const db = mysql.createConnection({
+    host: 'sql6.freesqldatabase.com',
+    user: 'sql6681739',
+    password: 'tbm3QBydgA',
+    database: 'index'
+    });
+
+    // Connect to MySQL
+    const linkElement = document.createElement("a");
+    linkElement = "https://www.phpmyadmin.co/sql.php?server=1&db=sql6681739&table=index&pos=0";
+    document.body.appendChild(linkElement);
+    
+  
+    const form = document.getElementById("Form").value;
+    const to = document.getElementById("To").value;
+    const seaters = document.getElementById("seat").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+  
+
+  function cancelBooking() {
+    alert("Booking canceled!");
+  }
+  </script>
+
+</body>
+</html>

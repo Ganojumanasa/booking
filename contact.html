@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: url(https://cdn.wallpapersafari.com/33/32/rp9SOs.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    h1 {
+        margin: 120px;
+        color: aliceblue;
+        padding: 20px;
+        text-align: center;
+    }
+    .contact {
+        color: aliceblue;
+    }
+</style>
+<body>
+    <h1>CONTACT US</h1>
+    <form>
+        <div class="form">
+            <input type="text" name="name" placeholder="your name">
+        </div>
+        <div class="form">
+            <input type="email" name="email" placeholder="your email">
+        </div>
+        <div class="form">
+            <textarea name="message" placeholder="your message"></textarea>
+        </div>
+        <button type="submit">send message</button>
+    </form>
+    <div class="contact">
+        <h3>Contact Information</h3>
+        <p>+91 00000000000</p>
+        <p>ganojumanasa@gmail.com</p>
+        <p>hyberabad</p>
+        <button  onclick="location.href='index.html'" type="submit" >Go to home</button>
+    </div>
+</body>
+</html>
